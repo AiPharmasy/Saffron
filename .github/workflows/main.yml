@@ -1,0 +1,80 @@
+name: Deploy from Zip File
+
+on:
+  push:
+    paths:
+      - '**.zip'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy from zip
+        run: |
+          echo "🚀 Starting deployment from zip file..."
+          
+          # Find the zip file
+          ZIP_FILE=$(find . -maxdepth 1 -name "*.zip" -type f | head -n 1)
+          
+          if [ -z "$ZIP_FILE" ]; then
+            echo "❌ No zip file found in root directory"
+            exit 1
+          fi
+          
+          echo "📦 Found zip file: $ZIP_FILE"
+          ZIP_FILENAME=$(basename "$ZIP_FILE")
+
+          # Create temp directory for extraction
+          TEMP_DIR="temp_extract"
+          mkdir -p "$TEMP_DIR"
+
+          # Extract zip to temp directory
+          echo "📂 Extracting zip file..."
+          unzip -qq "$ZIP_FILE" -d "$TEMP_DIR"
+
+          # Fix permissions to avoid access issues
+          chmod -R 755 "$TEMP_DIR"
+
+          # Find the actual content directory (deepest folder with files)
+          echo "🔍 Locating content folder..."
+          CONTENT_DIR=$(find "$TEMP_DIR" -type f | head -n 1 | xargs dirname)
+          echo "📁 Content directory detected: $CONTENT_DIR"
+
+          # Delete all files except the zip and .git directory
+          echo "🧹 Removing old files (keeping .git and zip)..."
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name "$ZIP_FILENAME" ! -name "$TEMP_DIR" -exec rm -rf {} +
+
+          # Move extracted content to root
+          echo "📁 Moving extracted files to root..."
+          shopt -s dotglob
+          mv "$CONTENT_DIR"/* . || true
+          shopt -u dotglob
+
+          # Clean up
+          echo "🧠 Cleaning up..."
+          rm -rf "$TEMP_DIR"
+          rm -f "$ZIP_FILE"
+
+          echo "✅ Deployment preparation complete!"
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add -A
+
+          if git diff --staged --quiet; then
+            echo "ℹ️ No changes to commit"
+          else
+            git commit -m "🚀 Auto-deploy: Extracted and deployed from zip file"
+            git push
+            echo "✅ Changes committed and pushed successfully!"
+          fi
