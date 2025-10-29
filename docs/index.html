@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مدیریت هوشمند پخش گل زعفران - افزایش بازدهی فروش</title>
+  <meta name="description" content="نرم‌افزار مدیریت پخش گل زعفران با شفافیت کامل در سفارش، تحویل و تسویه. کاهش ضایعات و افزایش سود با یک پلتفرم واحد.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">🌸</div>
+          <span class="logo-text">زعفران پلاس</span>
+        </div>
+        <button class="btn btn-primary" onclick="scrollToForm()" data-testid="button-header-cta">
+          درخواست مشاوره
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">مدیریت هوشمند پخش گل زعفران و افزایش بازدهی فروش</h1>
+        <p class="hero-subtitle">شفافیت کامل در سفارش، تحویل و تسویه با یک پلتفرم واحد</p>
+        
+        <div class="hero-benefits">
+          <div class="benefit-item">
+            <span class="benefit-icon">✓</span>
+            <span class="benefit-text">کنترل دقیق سفارش و تحویل گل</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">✓</span>
+            <span class="benefit-text">کاهش ضایعات و افزایش سود</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">✓</span>
+            <span class="benefit-text">شفافیت کامل در تسویه حساب‌ها</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">✓</span>
+            <span class="benefit-text">گزارش‌ها و تحلیل‌های مدیریتی برای تصمیم‌گیری سریع</span>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary btn-lg" onclick="scrollToForm()" data-testid="button-hero-cta">
+          درخواست مشاوره رایگان
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">مزایای کلیدی سیستم</h2>
+        <p class="section-description">با استفاده از نرم‌افزار مدیریت پخش گل زعفران، کسب و کار خود را به سطح جدیدی ارتقا دهید</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card" data-testid="card-feature-0">
+          <div class="feature-icon">📦</div>
+          <h3 class="feature-title">کنترل دقیق سفارش و تحویل گل</h3>
+          <p class="feature-description">مدیریت کامل فرآیند سفارش‌گیری، پیگیری تحویل و دریافت سرگل با دقت بالا و بدون خطا</p>
+        </div>
+        
+        <div class="feature-card" data-testid="card-feature-1">
+          <div class="feature-icon">📉</div>
+          <h3 class="feature-title">کاهش ضایعات و افزایش سود</h3>
+          <p class="feature-description">با سیستم هوشمند مدیریت موجودی و توزیع، ضایعات را به حداقل رسانده و سود خود را افزایش دهید</p>
+        </div>
+        
+        <div class="feature-card" data-testid="card-feature-2">
+          <div class="feature-icon">🛡️</div>
+          <h3 class="feature-title">شفافیت کامل در تسویه حساب‌ها</h3>
+          <p class="feature-description">ثبت دقیق تمام تراکنش‌ها، گزارش‌های مالی شفاف و تسویه حساب آسان با پاک‌کنندگان و رانندگان</p>
+        </div>
+        
+        <div class="feature-card" data-testid="card-feature-3">
+          <div class="feature-icon">📊</div>
+          <h3 class="feature-title">گزارش‌ها و تحلیل‌های مدیریتی</h3>
+          <p class="feature-description">دسترسی آنی به گزارش‌های تحلیلی و نمودارهای عملکرد برای تصمیم‌گیری سریع و هوشمند</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">ویژگی‌ها و خدمات مکمل</h2>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card" data-testid="card-service-0">
+          <div class="service-icon">📱</div>
+          <h3 class="service-title">اپلیکیشن موبایل پاک‌کنندگان</h3>
+          <p class="service-description">ثبت و پیگیری سفارشات به صورت آنی</p>
+        </div>
+        
+        <div class="service-card" data-testid="card-service-1">
+          <div class="service-icon">🏆</div>
+          <h3 class="service-title">سیستم امتیازدهی</h3>
+          <p class="service-description">ارزیابی و پاداش برای تیم پخش</p>
+        </div>
+        
+        <div class="service-card" data-testid="card-service-2">
+          <div class="service-icon">🔔</div>
+          <h3 class="service-title">پیامک و نوتیفیکیشن</h3>
+          <p class="service-description">یادآوری وضعیت سفارشات به موقع</p>
+        </div>
+        
+        <div class="service-card" data-testid="card-service-3">
+          <div class="service-icon">💻</div>
+          <h3 class="service-title">داشبورد تحت وب</h3>
+          <p class="service-description">کنترل کامل عملیات از هر مکان</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analytics Section -->
+  <section id="analytics" class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">گزارش‌ها و تحلیل‌های هوشمند</h2>
+        <p class="section-description">دسترسی آنی به تمام اطلاعات عملیاتی و مالی کسب و کار خود با داشبورد اختصاصی</p>
+      </div>
+      
+      <div class="charts-grid">
+        <div class="chart-container" data-testid="chart-delivery">
+          <h3 class="chart-title">میزان تحویل گل روزانه (کیلوگرم)</h3>
+          <canvas id="deliveryChart" class="chart-canvas"></canvas>
+        </div>
+        
+        <div class="chart-container" data-testid="chart-workers">
+          <h3 class="chart-title">عملکرد پاک‌کنندگان (هفته جاری)</h3>
+          <canvas id="workersChart" class="chart-canvas"></canvas>
+        </div>
+        
+        <div class="chart-container" data-testid="chart-revenue">
+          <h3 class="chart-title">درآمد ماهانه (میلیون تومان)</h3>
+          <canvas id="revenueChart" class="chart-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Form Section -->
+  <section class="section section-form" id="consultation-form">
+    <div class="container">
+      <div class="form-wrapper">
+        <h2 class="form-title">مشاوره رایگان دریافت کنید</h2>
+        <p class="form-description">شماره موبایل خود را وارد کنید و همین حالا مشاوره فروش رایگان دریافت کنید</p>
+        
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+        <form id="consultForm" class="consultation-form" data-testid="form-consultation" action="https://script.google.com/macros/s/AKfycbwxsFhzudT_8GFCcTedZ5VyVpA1BldHbd_4ufb-3khWZF0eWPEGbrW85NxG8wET6mMm/exec" method="post" accept-charset="utf-8" target="hidden_iframe">
+          <input 
+            type="tel" 
+            name="phone" 
+            id="phone"
+            placeholder="۰۹xxxxxxxxx" 
+            required 
+            pattern="^09\d{9}$"
+            inputmode="numeric"
+            dir="ltr"
+            autocomplete="tel"
+            data-testid="input-phone"
+          >
+          <input type="hidden" name="site_tag" value="hys7f8y7sf">
+          <input type="hidden" name="site_id" value="6f50f4ba50933e5bbdbbe90d0856b026a6ca40a4af87c529533efc6bb963327d">
+          <button type="submit" class="btn btn-submit" data-testid="button-submit">
+            دریافت مشاوره رایگان
+          </button>
+          <p class="form-note">مشاوره کاملاً رایگان و بدون تعهد</p>
+        </form>
+        
+        <div id="success-message" class="success-message" style="display: none;" data-testid="message-success">
+          <div class="success-icon">✅</div>
+          <h3 class="success-title">درخواست شما ثبت شد ✅</h3>
+          <p class="success-text">کارشناسان ما در اسرع وقت با شما تماس خواهند گرفت</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <div class="logo">
+            <div class="logo-icon">🌸</div>
+            <span class="logo-text">زعفران پلاس</span>
+          </div>
+          <p class="footer-description">نرم‌افزار مدیریت هوشمند پخش گل زعفران</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">دسترسی سریع</h3>
+          <ul class="footer-links">
+            <li><a href="#features">ویژگی‌ها</a></li>
+            <li><a href="#services">خدمات</a></li>
+            <li><a href="#analytics">گزارش‌ها</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© ۱۴۰۴ زعفران پلاس. تمامی حقوق محفوظ است.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Chart.js defaults for RTL
+    Chart.defaults.font.family = 'Vazirmatn';
+    
+    // Initialize charts after DOM loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Delivery Chart (Line Chart)
+      const deliveryCtx = document.getElementById('deliveryChart').getContext('2d');
+      new Chart(deliveryCtx, {
+        type: 'line',
+        data: {
+          labels: ['شنبه', 'یکشنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنجشنبه', 'جمعه'],
+          datasets: [{
+            label: 'گل تحویلی',
+            data: [42, 38, 45, 51, 47, 55, 49],
+            borderColor: '#d97706',
+            backgroundColor: 'rgba(217, 119, 6, 0.1)',
+            tension: 0.4,
+            fill: true
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: function(value) {
+                  return value + ' کیلو';
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // Workers Chart (Bar Chart)
+      const workersCtx = document.getElementById('workersChart').getContext('2d');
+      new Chart(workersCtx, {
+        type: 'bar',
+        data: {
+          labels: ['فاطمه احمدی', 'زهرا حسینی', 'مریم رضایی', 'طیبه کریمی', 'صدیقه محمدی'],
+          datasets: [{
+            label: 'کیلوگرم',
+            data: [165, 142, 188, 134, 156],
+            backgroundColor: [
+              'rgba(217, 119, 6, 0.8)',
+              'rgba(234, 88, 12, 0.8)',
+              'rgba(180, 83, 9, 0.8)',
+              'rgba(194, 65, 12, 0.8)',
+              'rgba(217, 119, 6, 0.6)'
+            ],
+            borderColor: '#d97706',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: function(value) {
+                  return value + ' کیلو';
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // Revenue Chart (Line Chart)
+      const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+      new Chart(revenueCtx, {
+        type: 'line',
+        data: {
+          labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
+          datasets: [{
+            label: 'درآمد',
+            data: [8.5, 9.2, 8.8, 10.5, 9.8, 11.2],
+            borderColor: '#ea580c',
+            backgroundColor: 'rgba(234, 88, 12, 0.1)',
+            tension: 0.4,
+            fill: true
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: function(value) {
+                  return value + ' میلیون';
+                }
+              }
+            }
+          }
+        }
+      });
+    });
+
+    // Smooth scroll to form
+    function scrollToForm() {
+      document.getElementById('consultation-form').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    }
+
+    // Form submission
+    document.getElementById('consultForm').addEventListener('submit', function(e) {
+      const phoneInput = document.getElementById('phone');
+      const phone = phoneInput.value;
+      
+      // Validate Iranian phone number
+      const phonePattern = /^09\d{9}$/;
+      if (!phonePattern.test(phone)) {
+        e.preventDefault();
+        alert('لطفاً شماره موبایل را به صورت صحیح وارد کنید (مثال: 09123456789)');
+        return;
+      }
+
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.textContent = 'در حال ارسال...';
+      submitBtn.disabled = true;
+      
+      // Form will submit to hidden iframe, so page won't redirect
+      // Show success message after brief delay
+      setTimeout(function() {
+        document.getElementById('consultForm').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+      }, 1000);
+    });
+
+    // Smooth scroll for footer links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
