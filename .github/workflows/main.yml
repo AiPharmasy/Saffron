@@ -18,17 +18,17 @@ jobs:
       
       - name: Deploy from zip
         run: |
-          echo "ðŸš€ Starting deployment from zip file..."
+          echo "🚀 Starting deployment from zip file..."
           
           # Find the zip file
           ZIP_FILE=$(find . -maxdepth 1 -name "*.zip" -type f | head -n 1)
           
           if [ -z "$ZIP_FILE" ]; then
-            echo "âŒ No zip file found in root directory"
+            echo "❌ No zip file found in root directory"
             exit 1
           fi
           
-          echo "ðŸ“¦ Found zip file: $ZIP_FILE"
+          echo "📦 Found zip file: $ZIP_FILE"
           ZIP_FILENAME=$(basename "$ZIP_FILE")
           
           # Create temp directory for extraction
@@ -36,23 +36,23 @@ jobs:
           mkdir -p "$TEMP_DIR"
           
           # Extract zip to temp directory
-          echo "ðŸ“‚ Extracting zip file..."
+          echo "📂 Extracting zip file..."
           unzip -qq "$ZIP_FILE" -d "$TEMP_DIR"
           
           # Delete all files except the zip and .git directory
-          echo "ðŸ—‘ï¸  Removing old files (keeping .git and zip)..."
+          echo "🧹 Removing old files (keeping .git and zip)..."
           find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name "$ZIP_FILENAME" ! -name "$TEMP_DIR" -exec rm -rf {} +
           
           # Move extracted contents to root
-          echo "ðŸ“‹ Moving extracted files to root..."
+          echo "📁 Moving extracted files to root..."
           mv "$TEMP_DIR"/* . 2>/dev/null || mv "$TEMP_DIR"/.* . 2>/dev/null || true
           
           # Clean up temp directory and zip file
-          echo "ðŸ§¹ Cleaning up..."
+          echo "🧠 Cleaning up..."
           rm -rf "$TEMP_DIR"
           rm -f "$ZIP_FILE"
           
-          echo "âœ… Deployment preparation complete!"
+          echo "✅ Deployment preparation complete!"
       
       - name: Commit and push changes
         run: |
@@ -62,9 +62,9 @@ jobs:
           git add -A
           
           if git diff --staged --quiet; then
-            echo "â„¹ï¸  No changes to commit"
+            echo "ℹ️ No changes to commit"
           else
-            git commit -m "ðŸš€ Auto-deploy: Extracted and deployed from zip file"
+            git commit -m "🚀 Auto-deploy: Extracted and deployed from zip file"
             git push
-            echo "âœ… Changes committed and pushed successfully!"
+            echo "✅ Changes committed and pushed successfully!"
           fi
